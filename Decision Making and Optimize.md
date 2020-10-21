@@ -6,4 +6,18 @@
 ![](https://i.imgur.com/eIh87nJ.png)
 
 
+## 2.Beam search algorithm
+* 光束搜索
+* beam size usually set 2(binary tree) other value (3,4,...) depends on the situation
+![](https://i.imgur.com/KrdMzZU.png)
+
+![](https://i.imgur.com/rrthXlA.png)
+
+
+> Binary search tree
+* the value of left node < father node
+* the value of right node > father node
+
+![](https://i.imgur.com/pKh07S4.png)
+
 
