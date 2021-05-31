@@ -11,3 +11,16 @@
 * replace with all possible value
 
 ### 1.3 
+
+
+## Concurrency Control
+### equivalence class
+- reads-from
+wi(x) before rj(x), and there is no other wk(x) between them
+
+- final write
+
+#### View equivalence
+- same reads-from 
+- same final write
+
