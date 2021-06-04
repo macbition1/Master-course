@@ -72,3 +72,20 @@ if acyclic(no cycle) then S is CSR(conflict serializability)
 #### dead lock detection
 ![screenshot](img/Screenshot%202021-06-03%20at%2017.16.00.png)
 
+## Reliability Management
+
+### Recovery
+- dump
+- checkpoint
+
+#### dump
+complete copy
+> performed when system is offline
+> stored in stable memory
+> incremental
+#### checkpoint
+> writes data on disk for all completed trasactions
+> Synchronous write
+> records the active trasactions
+
+
