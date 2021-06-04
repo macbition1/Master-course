@@ -84,8 +84,43 @@ complete copy
 > stored in stable memory
 > incremental
 #### checkpoint
-> writes data on disk for all completed trasactions
+> writes data on disk for **all completed trasactions**
 > Synchronous write
-> records the active trasactions
+> records the **active trasactions**
+
+#### 1. Warm restart
+##### Redo
+> which transaction is already finished but didn't commit, between the last checkpoint and fail.
+
+##### Undo
+> in the last checkponit
+
+#### how to find the Redo and Undo
+```
+1. find the last checkpoint
+at last checkpoint Undo = {all active transactions at last checkpoint}
+Redo = { }(empty)
+
+2. Read forward the log 
+Undo = add the transaction which can find the Begin record
+Redo = move transaction from the undo to redo when the commit record is found 
+(transactions ending with rollback remain in undo list)
+```
+![redo-undo-begin](img/Screenshot%202021-06-04%20at%2009.54.31.png)
+![redo-undo-end](img/Screenshot%202021-06-04%20at%2009.53.48.png)
+
+
+#### 2. Cold restart
+
+```
+1. access the last dump to restore the damaged portion
+2. starting the last dunp, and read the log and redo all the transactions and commit/rollback
+3. perform a warm restart
+(alternative 2 and 3)
+```
+
+> Require **two log reads**:
+>- detect committed transactions(build Redo list)
+>- Redo actions of transactions in redo list
 
 
