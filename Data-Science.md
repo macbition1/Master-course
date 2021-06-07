@@ -123,4 +123,54 @@ Redo = move transaction from the undo to redo when the commit record is found
 >- detect committed transactions(build Redo list)
 >- Redo actions of transactions in redo list
 
+### Distribute system management
 
+#### 2P commit
+![2pl](img/Screenshot%202021-06-07%20at%2010.58.44.png)
+
+2PC
+- TM(transaction management): prepare, commit/abort, complete
+- RM(resource management): ready
+
+
+### MongoDB
+#### MapReduce
+Map:
+- Doc -> key-values pairs
+  
+Reduce:
+- AVG...
+  
+#### Replication(copy)
+#### Master-Slave
+
+
+
+#### CAP
+- Consistency
+- Avabilable
+- Partition tolerance
+**impossible provide all three features meanwhile**
+#### MongoDB querry
+```
+db.tableName.find({where condition}, {select*});
+```
+
+### Optimize
+#### Index(only  < 1/10 is good and > 100 tupples )
+- B+ tree (range) : Number, Date
+- Hash: String
+
+#### Join Strategy
+- Hash join (both tables > 10^3)
+- Nested Join (outer table > 10^3, inner table < 10^3)
+- Merge Join (parallel) maybe already sort big table
+
+#### Anticipate
+1. same attributes
+2. in the previous join same attributes
+3. the result doesn't change
+
+
+
+  
